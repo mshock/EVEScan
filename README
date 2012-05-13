@@ -1,0 +1,63 @@
+##############################################################################
+# EVEscan
+#
+#   * Turn market data into trade routes!
+#
+# Version 1.4 Alpha
+# Copyright (C) 2010 Matt Shockley
+#
+# Changelog:
+#   1.5
+#       - improved trade finder algorithm
+#           * finds potential profits from placing sell orders
+#           * finds trades across multiple buy orders in the same region/system
+#
+#   1.4
+#       - libevecache integration
+#           * reverence (thanks, Entity!)
+#           * Python interface for libevecache
+#       - new items pickle - id : {name,volume}
+#
+#   1.3
+#       - libevecache (dumper) integration
+#           * dumper.exe --market C:\...\CachedMethodCalls\*.cache
+#           * no more clicking export!
+#           * slow (must launch an external process for each log file)
+#           * kinda unreliable (doesn't recognize a lot of newer item ids)
+#
+#   1.2
+#       - GUI
+#           * tkinter (python tk/tcl interface)
+#           * multiplatform
+#           * see module description
+#       - archive log files feature
+#       - auto scan feature (beta)
+#       
+#   1.1
+#       - trade finder fully functional
+#           * will find the single optimal trade per commodity per buy/sell order match (efficiently)
+#               - proft = (min(sell_volume,buy_volume) x (sell_price - buy_price) for buy/sell orders
+#               - overlooks lots of smaller orders grouped in a single region
+#           * "force regions" option
+#           * thresholds:
+#               - cargo space
+#               - required capital
+#           * added item volume database
+#           * pickled the system and item databases for quicker load times
+#   1.0
+#       - basic trade finder functional
+#           * to/from region selection
+#           * added system database to get system name with system id
+#           * thresholds:
+#               - print to terminal (profit)
+#               - print to txt log (profit)
+#           * greedy algorithm needs to be more intelligent
+# TODO:
+#   * Auto-refresh regions, detect new log files/items etc
+# Organize/Optimize GUI
+#   - multi-region to/from selection (not sure what control to use here...)
+# Improve trade finder algorithm
+# sec status filter
+# get items across entire region/system, instead of single station (separate report)
+# optimal cargo fill
+##############################################################################
